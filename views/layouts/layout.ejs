@@ -7,7 +7,13 @@
     <title>MyBok</title>
   </head>
   <body>
-    <%- include("../partials/header.ejs") %> <%- body %>
+    <!-- header -->
+    <%- include("../partials/header.ejs") %>
+    <!-- error message -->
+    <%- include("../partials/errorMessage.ejs") %>
+    <!-- body -->
+    <%- body %>
+    <!-- footer -->
     <footer class="footer">Footer</footer>
   </body>
 </html>

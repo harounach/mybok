@@ -23,7 +23,7 @@ router.route("/").post((req, res) => {
   // Save the author to database
   author.save((err, newAuthor) => {
     if (err) {
-      res.render("/authors/new", {
+      res.render("authors/new", {
         author: author,
         errorMessage: "Error creating author",
       });
