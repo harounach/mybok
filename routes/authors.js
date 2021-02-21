@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 
+const Author = require("../models/author");
+
 // All authors route
 router.route("/").get((req, res) => {
   res.render("authors/index");
@@ -8,11 +10,11 @@ router.route("/").get((req, res) => {
 
 // New authors route
 router.route("/new").get((req, res) => {
-  res.render("authors/new");
+  res.render("authors/new", { author: new Author() });
 });
 
 // Create authors route
-router.route("/new").post((req, res) => {
+router.route("/").post((req, res) => {
   res.send("Author created");
 });
 
