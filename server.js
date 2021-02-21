@@ -4,6 +4,7 @@ const app = express();
 
 const expressLayouts = require("express-ejs-layouts");
 const indexRoute = require("./routes/index");
+const authorRoutes = require("./routes/authors");
 
 const mongoose = require("mongoose");
 
@@ -28,6 +29,7 @@ mongoose
 
 // Set up routes
 app.use("/", indexRoute);
+app.use("/authors", authorRoutes);
 
 // start listening to incoming request
 app.listen(process.env.PORT || PORT, () => {
