@@ -18,6 +18,9 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 
+// Apply middlewares
+app.use(express.urlencoded({ limit: "10mb", extended: false }));
+
 // Connect to database
 mongoose
   .connect(process.env.MONGODB_URI, {
