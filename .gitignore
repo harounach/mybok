@@ -116,4 +116,4 @@ dist
 .pnp.*
 
 # book cover upload images
-public/uploads/bookCovers/
+# public/uploads/bookCovers/
