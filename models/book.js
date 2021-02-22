@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const path = require("path");
 
 const coverImageBasePath = "uploads/bookCovers";
 
@@ -41,6 +42,13 @@ const BookSchema = new mongoose.Schema(
     collection: "mybok_books",
   }
 );
+
+// add coverImagePath virtual property to display image in books page
+BookSchema.virtual("coverImagePath").get(function () {
+  if (this.coverImageName != null) {
+    return path.join("/", coverImageBasePath, this.coverImageName);
+  }
+});
 
 module.exports = mongoose.model("Book", BookSchema);
 
